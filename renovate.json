@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "labels": ["dependencies"],
+  "branchPrefix": "renovate-",
+  "rangeStrategy": "pin",
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "rebaseWhen": "behind-base-branch",
+  "timezone": "Europe/London",
+  "packageRules": [
+    {
+      "matchPackageNames": ["typescript", "zone.js", "bootstrap", "actions/*"],
+      "enabled": false
+    },
+    {
+      "matchPackagePatterns": ["@types/*"],
+      "groupName": "@types",
+      "groupSlug": "type-definitions"
+    }
+  ]
+}
