@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AlertPanel {
+        /**
+          * The message to display
+         */
+        "message": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -20,19 +26,43 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface ToggleButton {
+        "clickedLabel": string;
+        "initialLabel": string;
+    }
 }
 declare global {
+    interface HTMLAlertPanelElement extends Components.AlertPanel, HTMLStencilElement {
+    }
+    var HTMLAlertPanelElement: {
+        prototype: HTMLAlertPanelElement;
+        new (): HTMLAlertPanelElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLToggleButtonElement extends Components.ToggleButton, HTMLStencilElement {
+    }
+    var HTMLToggleButtonElement: {
+        prototype: HTMLToggleButtonElement;
+        new (): HTMLToggleButtonElement;
+    };
     interface HTMLElementTagNameMap {
+        "alert-panel": HTMLAlertPanelElement;
         "my-component": HTMLMyComponentElement;
+        "toggle-button": HTMLToggleButtonElement;
     }
 }
 declare namespace LocalJSX {
+    interface AlertPanel {
+        /**
+          * The message to display
+         */
+        "message"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -47,15 +77,23 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface ToggleButton {
+        "clickedLabel"?: string;
+        "initialLabel"?: string;
+    }
     interface IntrinsicElements {
+        "alert-panel": AlertPanel;
         "my-component": MyComponent;
+        "toggle-button": ToggleButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "alert-panel": LocalJSX.AlertPanel & JSXBase.HTMLAttributes<HTMLAlertPanelElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "toggle-button": LocalJSX.ToggleButton & JSXBase.HTMLAttributes<HTMLToggleButtonElement>;
         }
     }
 }
