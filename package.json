@@ -43,7 +43,7 @@
     "@nrwl/workspace": "13.9.4",
     "@nxext/stencil": "^13.2.2",
     "@nxext/svelte": "^13.3.0",
-    "@stencil/angular-output-target": "^0.4.0",
+    "@stencil/angular-output-target": "^0.8.0",
     "@stencil/core": "^2.14.0",
     "@stencil/react-output-target": "^0.3.1",
     "@testing-library/react": "12.1.4",
