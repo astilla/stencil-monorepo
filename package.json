@@ -45,7 +45,7 @@
     "@nxext/svelte": "^13.3.0",
     "@stencil/angular-output-target": "^0.4.0",
     "@stencil/core": "^2.14.0",
-    "@stencil/react-output-target": "^0.3.1",
+    "@stencil/react-output-target": "^0.5.0",
     "@testing-library/react": "12.1.4",
     "@testing-library/react-hooks": "7.0.2",
     "@types/jest": "27.0.2",
